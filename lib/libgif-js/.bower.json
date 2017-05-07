@@ -1,0 +1,13 @@
+{
+  "name": "libgif-js",
+  "homepage": "https://github.com/buzzfeed/libgif-js",
+  "_release": "2c0d2f3759",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2c0d2f375923234d6872dd048f495c8e45d660e7"
+  },
+  "_source": "git://github.com/buzzfeed/libgif-js.git",
+  "_target": "*",
+  "_originalSource": "buzzfeed/libgif-js"
+}

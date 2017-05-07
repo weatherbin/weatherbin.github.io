@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://bl.ocks.org/mbostock/raw/4063318/f069bf84e97f9840e7b1a4d4df7337eb79073cd8/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="app/app.css" />
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/d3/d3.min.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/libgif-js/libgif.js"></script>
+    <script src="lib/libgif-js/rubbable.js"></script>
+
+    <script src="app/random-colors.js"></script>
+    <script src="app/dataset-meta-info.js"></script>
+    <script src="app/app.js"></script>
+
+    <style></style>
+</head>
+<body>
+
+
+
+<div class="left-column column">
+    <div class="help-container">
+        <span id="help-left" class="help-icon glyphicon glyphicon-question-sign"
+            data-toggle="popover" data-trigger="hover" title="Dataset Selection and Plots" data-placement="right"
+            data-content="This column lets you pick a dataset to view and displays a parallel coordinates plot for the cluster and day averages.">
+        </span>
+    </div>
+
+
+
+    <div style="clear: both;"></div>
+
+    <div class="configuration-section section">
+
+        <div class="section-header">Configuration</div>
+
+        <div class="configuration-item">
+            <span class="configuration-item-label">Dataset</span>
+            <select name="datasetDropDown"
+                    id="datasetDropDown"
+                    class="dataset-dropwdown form-control">
+            </select>
+        </div>
+    </div>
+
+    <div class="cluster-averages-in-dataset-section section">
+        <div class="section-header">Cluster Averages in Dataset <span class="fieldsetButton glyphicon glyphicon-cog" data-toggle="modal" data-target=".field-selection"></span></div>
+        <div class="cluster-averages-in-dataset parallel-coordinates-clusters"></div>
+    </div>
+
+    <div class="day-averages-in-selected-cluster-section section">
+        <div class="section-header">Day Averages in Selected Cluster <span class="fieldsetButton glyphicon glyphicon-cog" data-toggle="modal" data-target=".field-selection"></span></div>
+        <div class="day-averages-in-selected-cluster parallel-coordinates-clusters"></div>
+    </div>
+
+
+</div>
+
+<div class="center-column column">
+    <div class="help-container">
+        <span id="help-center" class="help-icon glyphicon glyphicon-question-sign"
+            data-toggle="popover" data-trigger="hover" title="Daily Calendar" data-placement="right"
+            data-content="This column shows how the clusters appear day-by-day throughout a calendar year. Click on a day to highlight just that day.">
+        </span>
+    </div>
+
+    <div class="calendar-visualization-section section">
+
+        <div class="section-header">Clustered Calendar Overview</div>
+
+        <div class="calendars no-data-available-color"></div>
+
+        <div class="calendar-legend">
+            <div class="calendar-legend-header">
+                Legend
+            </div>
+            <div class="calendar-legend-entries">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="right-column column">
+    <div class="help-container">
+        <span id="help-right" class="help-icon glyphicon glyphicon-question-sign"
+            data-toggle="popover" data-trigger="hover" title="Day Detail View" data-placement="left"
+            data-content="This column shows detailed data and a weather map for the selected day of the year. TMI stands for Traffic Management Initiative.">
+        </span>
+    </div>
+
+    <div class="highlighted-day-section section">
+        <div class="section-header">Highlighted Day</div>
+
+        <div class="weather-map">
+            <img src="images/no-day-selected.png">
+        </div>
+
+        <div class="selected-date-header">no day selected...</div>
+
+        <div class="highlighted-day-averages">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="2">DAY AVERAGES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="highlighted-day-tmis">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th colspan="2">TMI CAUSED BY WEATHER</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="branding">
+        <div class="logo">
+            <img src="images/logo3.png">
+        </div>
+        <div class="branding-text">
+            <div class="product-name">Weatherbin</div>
+            <div class="tag-line">the bad weather explorer</div>
+            <div class="by-line">By <span class="rand-purple parent-brand">RAND</span> / <span class="nasa-blue parent-brand">NASA</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="field-selection modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Choose fields to display</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="fieldsetSelect">(hold ctrl/cmd to select multiple)</label>
+                    <select id="fieldsetSelect" class="fieldset form-control" name="fieldset" multiple></select>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span style="float: left;"><input type="checkbox" id="apply-fieldset-both" checked disabled><label for="apply-fieldset-both">Apply to both charts.</label></span>
+                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                <button type="button" id="fieldsetSelectConfirmBtn" class="fieldsetSelectConfirmBtn btn btn-primary" data-dismiss="modal">Select and Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

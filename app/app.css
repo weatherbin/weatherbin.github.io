@@ -1,0 +1,424 @@
+body
+{
+    font-family: 'Roboto', arial, sans-serif;
+    font-size: 10px;
+    shape-rendering: crispEdges;
+    color: #323232;
+    background-color: #eee;
+
+    /* Use CSS flexbox to prevent columns from wrapping. */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    /* Keeps the page in-place after scaling, so it doesn't move from (0,0) */
+    transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -webkit-transform-origin: 0% 0%;
+}
+
+
+
+.branding
+{
+    margin-top: 2px;
+    margin-right: 15px;
+    float: right;
+    position: relative;
+    top: -257px;
+}
+
+.logo
+{
+    float: left;
+}
+
+.logo img
+{
+    margin-top: 3px;
+    width: 80px;
+    opacity: 0.6;
+}
+
+.branding-text
+{
+    float: left;
+    margin-left: 10px;
+}
+
+.product-name
+{
+    font-size: 36px;
+    font-weight: 300;
+    vertical-align: middle;
+}
+
+.tag-line
+{
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: -4px;
+    margin-left: 5px;
+}
+
+.by-line
+{
+    text-align: right;
+    font-size: 10px;
+    font-weight: 300;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+.parent-brand
+{
+    color: white;
+    border-radius: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    opacity: .7;
+}
+
+.rand-purple
+{
+    background-color: purple;
+}
+
+.nasa-blue
+{
+    background-color: #0000ff;
+}
+
+.column
+{
+    margin-top: 20px;
+    float: left;
+}
+
+.left-column
+{
+    margin-left: 10px;
+}
+
+.center-column
+{
+    margin-left: 30px;
+}
+
+.right-column
+{
+    margin-left: 50px;
+}
+
+.calendars,
+.calendar,
+.calendar-legend
+{
+    float: left;
+}
+
+.no-data-available-color
+{
+    fill: rgb(200,200,200);
+}
+
+.calendars
+{
+    margin-top: 10px;
+}
+
+.year-header
+{
+    text-anchor: middle;
+    font-size: 20px;
+}
+
+.section
+{
+}
+
+.section-header
+{
+    font-size: 20px;
+}
+
+.cluster-averages-in-dataset-section,
+.day-averages-in-selected-cluster-section
+{
+    margin-top: 30px;
+}
+
+
+.configuration-section
+{
+
+}
+
+.configuration-item
+{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.configuration-item-label
+{
+    font-size: 18px;
+}
+
+.dataset-dropwdown
+{
+    margin-left: 10px;
+    font-size:  15px;
+    width: 450px;
+    display: inline-block;
+}
+
+.fieldsetButton {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.fieldset {
+    height: 250px !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    /* fixes an issue where modal would be 0-height in Safari */
+    height: 800px;
+}
+
+.parallel-coordinates-clusters
+{
+    margin-top: 10px;
+}
+
+svg {
+    font: 10px sans-serif;
+}
+
+.background path {
+    fill: none;
+    stroke: #ddd;
+    shape-rendering: crispEdges;
+}
+
+.foreground path {
+    fill: none;
+    stroke-width: 3px;
+}
+
+.brush .extent {
+    fill-opacity: .3;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+    font-size: 12px;
+    cursor: move;
+}
+
+
+
+.calendar-legend
+{
+    padding-top: 125px;
+    padding-left: 20px;
+}
+.calendar-legend-header
+{
+    font-size: 18px;
+}
+
+.calendar-legend-entries
+{
+    margin-left: 2px;
+}
+
+.calendar-legend-entry
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.calendar-legend-entry-color-box
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+}
+
+.calendar-legend-entry-color-label
+{
+    display: inline-block;
+    vertical-align: super;
+    margin-left: 5px;
+}
+
+.day
+{
+    fill: #fff;
+    stroke: #ccc;
+    cursor: pointer;
+}
+
+.month
+{
+    fill: none;
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+
+.selected-date-header
+{
+    font-size: 18px;
+    text-align: center;
+    min-height: 22px;
+}
+
+.weather-map
+{
+    margin-top: 15px;
+    width: 300px;
+    height: 250px;
+}
+
+.weather-map img,.weather-map canvas
+{
+    width: 100%;
+    cursor: ew-resize;
+}
+
+.weather-controls {
+    top: -740px;
+    height: 255px;
+    /*width: 282px !important;*/
+    /*margin-left: 10px;*/
+    margin-right: auto;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.weather-controls-during-swap {
+    top: 0px !important;
+}
+
+.scrubbee {
+    cursor: pointer;
+}
+
+.play-pause {
+    cursor: pointer;
+}
+
+.play {
+    font-size: 25px;
+}
+
+.pause {
+    font-size: 15px;
+}
+
+.help-container {
+    position: relative;
+    float: right;
+}
+
+.help-icon {
+    position: absolute;
+    right: 0em;
+    top: 0px;
+    font-size: 18pt;
+    opacity: 0.5;
+}
+
+.help-icon:hover {
+    opacity: 1;
+}
+
+#help-left {
+    margin-right: 44px;
+    margin-top: 5px;
+}
+
+#help-center {
+    margin-right: 80px;
+    margin-top: 5px;
+}
+
+#help-right {
+    margin-right: -5px;
+    margin-top: 5px;
+}
+
+.popover {
+    width: 30em;
+}
+
+.dimmed {
+    opacity: 0.2;
+    transition: opacity .25s ease-in-out;
+}
+
+.column:not(.dimmed){
+    transition: opacity .25s ease-in-out;
+}
+
+.highlighted-day-section section
+{
+}
+
+.highlighted-day-averages,
+.highlighted-day-tmis
+{
+    margin-top: 20px;
+    width: 284px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.highlighted-day-averages th,
+.highlighted-day-tmis th
+{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: rgba(25, 173, 116, 0.76);
+    /*color: rgb(247, 247, 247);*/
+    color: white;
+}
+
+.highlighted-day-tmis th
+{
+ background-color: rgba(224, 82, 82, 0.76);
+}
+
+.highlighted-day-averages tr,
+.highlighted-day-tmis tr
+{
+    font-size: 16px;
+}
+
+
+.highlighted-day-averages .day-averages-label-cell
+{
+    width: 70%;
+}
